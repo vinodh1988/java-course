@@ -19,11 +19,20 @@ public static void main(String n[]) {
                  //is treated as double
   System.out.println(c);
   
+  int d=0131;  //0+1x8^2+1x8^1+1x8^0
+               // 1x8^2+3x8^1+1x8^0
+                 //64+24+1;
+   System.out.println(d)    ;        
   boolean e=true;
   System.out.println(e);
   
-  char d='D';
-  System.out.println(d);
+  int l=89;
+  
+  System.out.printf("\n %o",l);
+  System.out.printf("\n %x",l);//59
+  
+ // char d='D';
+  //System.out.println(d);
 }
 }
 
