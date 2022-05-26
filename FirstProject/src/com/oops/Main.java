@@ -12,5 +12,21 @@ public class Main {
 	             //to be accessed outside the class
 	 s.setStudent(1, "Ram", "Mumbai");
 	 s.show();
+	 s.setStudent(34);
+	 s.show();
   }
 }
+
+
+/*
+  Constructor is a special method in java
+  
+  Which is used to create objects...
+  
+  constructor without any parameters is created by default
+  in java...this is called default constructor
+  
+  constructor will not have return types
+  
+  constructors can be overloaded [polymorphism]
+*/
