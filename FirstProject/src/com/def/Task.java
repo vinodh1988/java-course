@@ -6,6 +6,10 @@ public interface Task {
     default public void postProcess() {
     	System.out.println("Default post process");
     };
+    
+    public static void main(String n[]) {
+    	System.out.println("Main method");
+    }
 }
 
 /*
