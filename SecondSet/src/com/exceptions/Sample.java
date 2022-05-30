@@ -1,5 +1,6 @@
 package com.exceptions;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Sample {
@@ -12,6 +13,8 @@ public class Sample {
 	    int a= Integer.parseInt(sc.next());
 	    int b= Integer.parseInt(sc.next());
 	    System.out.println(a/b);
+	  System.out.println("Enter a class name with package name to load it");
+	  Class.forName(sc.next());
 	}
 	catch(ArrayIndexOutOfBoundsException e) {
 		e.printStackTrace();
@@ -19,10 +22,17 @@ public class Sample {
 	catch(NullPointerException e) {
 		System.out.println("Null pointer exception");
 	}
-	
+	catch(ClassNotFoundException e) {
+	   System.out.println("Class Not Found Exception");
+	}
+	 
 	catch(RuntimeException e) {
 		System.out.println("Runtime exception occured and its type is"+e.getClass().getName());
 	}
+	 
+	 catch(Exception e) {
+		 e.printStackTrace();
+	 }
 	  System.out.println("Some other logic");
   }
 }
