@@ -21,6 +21,17 @@ public class MainApp {
 	  case "Testing":
 		     t=new Testing();
 		     break;
+	  case "Anonymous":
+		     t= new Task() {
+		    	  public void process() {
+		    		  System.out.println("Anonymous Class Process");
+		    	  }
+		     };
+		     
+	  case "Lambda":
+		     t=()-> {
+		    	System.out.println("Lambda implementation"); 
+		     };
 	  }
 	  Perform.doThis(t);
   }
