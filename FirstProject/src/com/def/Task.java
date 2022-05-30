@@ -2,6 +2,10 @@ package com.def;
 
 public interface Task {
     public void process();
+    
+    default public void postProcess() {
+    	System.out.println("Default post process");
+    };
 }
 
 /*

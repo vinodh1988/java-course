@@ -27,12 +27,16 @@ public class MainApp {
 		    		  System.out.println("Anonymous Class Process");
 		    	  }
 		     };
-		     
+		     break;
 	  case "Lambda":
 		     t=()-> {
 		    	System.out.println("Lambda implementation"); 
 		     };
+		     break;
+	  case "Packaging":
+		     t=new Packaging();
 	  }
 	  Perform.doThis(t);
+	 
   }
 }
