@@ -2,6 +2,7 @@ package com.jdbc;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -11,6 +12,8 @@ public class ReadData {
 		   try {
 			  Statement s= connection.createStatement();
 			  ResultSet rs=s.executeQuery("select * from person");
+			  ResultSetMetaData rm=rs.getMetaData();
+			  System.out.println(rm.getColumnName(1)+" "+rm.getColumnName(2)+" "+rm.getColumnName(3));
 			  while(rs.next()) {
 				  System.out.println(rs.getInt(1)+"  "+rs.getString(2)+" "+rs.getString(3));
 			  }
