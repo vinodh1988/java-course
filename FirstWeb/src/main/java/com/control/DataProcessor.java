@@ -1,13 +1,17 @@
 package com.control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.model.PeopleStore;
+import com.model.Person;
 
 /**
  * Servlet implementation class DataProcessor
@@ -41,8 +45,14 @@ public class DataProcessor extends HttpServlet {
 		String name = request.getParameter("name");
 		String city= request.getParameter("city");
 		
-		PrintWriter out = response.getWriter();
-		out.println(sno+"  "+name+" "+city);
+		Person person = new Person(sno,name,city);
+		PeopleStore.addPerson(person);
+		List<Person> list =PeopleStore.getPeople();
+		request.setAttribute("plist", list);
+		request.setAttribute("person", person);
+		RequestDispatcher rd=request.getRequestDispatcher("result.jsp");
+		rd.forward(request, response);
+	//    response.sendRedirect("result.jsp");
 	}
 
 }
