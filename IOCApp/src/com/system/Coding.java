@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class Coding implements Activity {
 
 @Autowired
-@Qualifier("python")
-	private Program program;
+//@Qualifier("python")
+	private Program python;
 	
 	@Override
 	public void perform() {
 		// TODO Auto-generated method stub
         System.out.println("Coding...!!!");
-        program.writeCode();
+        python.writeCode();
 	}
 
 	
