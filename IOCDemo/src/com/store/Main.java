@@ -13,10 +13,10 @@ public class Main {
 	  ApplicationContext ac=new AnnotationConfigApplicationContext(JavaConfig.class);
 	 // ac.register(JavaConfig.class);
 	 // ac.refresh();
-	  Scanner sc=new Scanner(System.in);
+	/*  Scanner sc=new Scanner(System.in);
 	  System.out.println("Enter what activity you want to do coding/document/testing");
 	  String choice = sc.next();
 	  Activity a=(Activity)ac.getBean(choice);
-	  a.perform();
+	  a.perform();*/
   }
 }
