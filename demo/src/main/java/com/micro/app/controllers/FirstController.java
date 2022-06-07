@@ -16,6 +16,7 @@ public class FirstController {
 	DataService service;
 	@RequestMapping("/home.do")
 	public String doThis(ModelMap p) {
+		p.addAttribute("projects",service.getProjects());
 		p.addAttribute("names",service.getNames());
 		return "home";
 	}

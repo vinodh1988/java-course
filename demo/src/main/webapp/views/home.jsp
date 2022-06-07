@@ -15,5 +15,12 @@
      <li>${x}</li>
    </c:forEach>
    </ul>
+   <h5>Projects</h5>
+   <c:forEach items="${projects}" var="x">
+     <div style="border: 2px solid black; background-color: lightblue; padding: 30px; width: 600px; height: 100px;">
+         <h3>${x.description}</h3>
+         <h6>${x.title}</h6>
+     </div>
+   </c:forEach>
 </body>
 </html>
