@@ -22,4 +22,8 @@ ProjectRepository repository;
    public List<Project> getProjects(){
 	   return repository.findAll();
    }
+   
+   public void addProject(Project p) {
+	   repository.save(p);
+   }
 }
