@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.micro.app.entity.Project;
 import com.micro.app.repositories.ProjectRepository;
+import com.micro.app.utils.RecordNotFoundException;
 
 @Service
 public class DataService {
@@ -30,5 +31,11 @@ ProjectRepository repository;
 	   repository.save(p);
    }
    
-   
+   public void delete(int sno) throws RecordNotFoundException {
+	   Project p=repository.findByProjectno(sno);
+	   if(p==null)
+		   throw new RecordNotFoundException();
+	   else
+		   repository.delete(p);
+   }
 }
