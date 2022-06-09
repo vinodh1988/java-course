@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.micro.app.entity.Project;
+import com.micro.app.services.AccessService;
 import com.micro.app.services.DataService;
 
 @Controller
@@ -18,10 +19,14 @@ public class FirstController {
 	}
 	@Autowired
 	DataService service;
+	
+	@Autowired
+	AccessService accessservice;
 	@RequestMapping("/home.do")
 	public String doThis(ModelMap p) {
 		p.addAttribute("projects",service.getProjects());
 		p.addAttribute("names",service.getNames());
+		p.addAttribute("times",accessservice.getAccess());
 		return "home";
 	}
 	
@@ -37,8 +42,10 @@ public class FirstController {
 	 @RequestMapping(value="/store.do",method = RequestMethod.POST)
 	 public String people(@ModelAttribute("project")Project project,ModelMap p) {
 	        service.addProject(project);
+	        accessservice.setAccess();
 		    p.addAttribute("names",service.getNames());
 		    p.addAttribute("projects",service.getProjects());
+		    p.addAttribute("times",accessservice.getAccess());
 			return "home";
 				//ist paramater name of the view
 				//2nd parameter name of the moduleAttribute

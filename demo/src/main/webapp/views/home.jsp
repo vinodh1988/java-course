@@ -15,6 +15,7 @@
      <li>${x}</li>
    </c:forEach>
    </ul>
+   <h3> Number of records added in this session :  ${times} </h3>
    <h5>Projects</h5>
    <c:forEach items="${projects}" var="x">
      <div style="border: 2px solid black; background-color: lightblue; padding: 30px; width: 600px; height: 100px;">
