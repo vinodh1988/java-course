@@ -23,6 +23,9 @@ ProjectRepository repository;
 	   return repository.findAll();
    }
    
+   public Project getProject(int sno) {
+	   return repository.findByProjectno(sno);
+   }
    public void addProject(Project p) {
 	   repository.save(p);
    }

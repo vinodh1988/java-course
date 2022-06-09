@@ -44,7 +44,7 @@ public class FirstController {
 				//2nd parameter name of the moduleAttribute
 	 }
 	 
-
+	 
 	 @RequestMapping(value="/store.do",method = RequestMethod.POST)
 	 public String people(@ModelAttribute("project")Project project,ModelMap p) {
 	        service.addProject(project);
