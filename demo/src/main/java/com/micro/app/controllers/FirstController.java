@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.micro.app.entity.Project;
 import com.micro.app.services.AccessService;
 import com.micro.app.services.DataService;
+import com.micro.app.services.WholeAccess;
 
 @Controller
 public class FirstController {
@@ -22,11 +23,16 @@ public class FirstController {
 	
 	@Autowired
 	AccessService accessservice;
+	
+	@Autowired
+	WholeAccess whole;
+	
 	@RequestMapping("/home.do")
 	public String doThis(ModelMap p) {
 		p.addAttribute("projects",service.getProjects());
 		p.addAttribute("names",service.getNames());
 		p.addAttribute("times",accessservice.getAccess());
+		p.addAttribute("atimes",whole.getAccess());
 		return "home";
 	}
 	
@@ -43,7 +49,9 @@ public class FirstController {
 	 public String people(@ModelAttribute("project")Project project,ModelMap p) {
 	        service.addProject(project);
 	        accessservice.setAccess();
-		    p.addAttribute("names",service.getNames());
+            whole.setAccess();
+	        p.addAttribute("names",service.getNames());
+	        p.addAttribute("atimes",whole.getAccess());
 		    p.addAttribute("projects",service.getProjects());
 		    p.addAttribute("times",accessservice.getAccess());
 			return "home";
