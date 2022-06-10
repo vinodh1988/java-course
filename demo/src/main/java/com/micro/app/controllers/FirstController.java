@@ -1,5 +1,5 @@
 package com.micro.app.controllers;
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +13,7 @@ import com.micro.app.services.AccessService;
 import com.micro.app.services.DataService;
 import com.micro.app.services.WholeAccess;
 
-//@Controller
+@Controller
 public class FirstController {
 	{
 		System.out.println("#instantiated");
@@ -62,4 +62,3 @@ public class FirstController {
 	 
 	
 }
-*/
