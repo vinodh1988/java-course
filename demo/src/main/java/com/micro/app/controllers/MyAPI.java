@@ -19,7 +19,7 @@ import com.micro.app.utils.RecordNotFoundException;
 
 @RestController
 @RequestMapping("/api")
-public class MyAPI {
+public class MyAPI implements ProjectAPI{
  @Autowired
  DataService project;
 	
